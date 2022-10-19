@@ -1,0 +1,83 @@
+record(waveform, "$(PREFIX):OUTPUT") {
+    field(DESC, "Output Spectrum")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(NELM, "1044")
+    field(FTVL, "DOUBLE")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_OUTPUT_SPECT")
+}
+
+record(waveform, "$(PREFIX):SAMPLE") {
+    field(DESC, "Formatted Sample Spectrum")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(NELM, "1044")
+    field(FTVL, "DOUBLE")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_SAMPLE_SPECT")
+}
+
+record(waveform, "$(PREFIX):X_AXIS") {
+    field(DESC, "X-Axis")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(NELM, "1044")
+    field(FTVL, "DOUBLE")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_X_AXIS")
+}
+
+record(waveform, "$(PREFIX):REFERENCE") {
+    field(DESC, "Formatted Background Spectrum")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(NELM, "1044")
+    field(FTVL, "DOUBLE")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_REF_SPECT")
+}
+
+record(waveform, "$(PREFIX):DARK") {
+    field(DESC, "Formatted Dark Spectrum")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(NELM, "1044")
+    field(FTVL, "DOUBLE")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_DARK_SPECT")
+}
+
+record(ai, "$(PREFIX):FORMATTED_SPECTRUM_LEN_RBV") {
+    field(DESC, "buffer capacity")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_FORMATTED_SPECT_LEN")
+}
+
+
+record(bi, "$(PREFIX):X_AXIS_AVAILABLE_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "1 if wavelength collected")
+    field(VAL,  "0")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_X_AXIS_AVAILABLE")
+}
+
+
+record(bi, "$(PREFIX):DARK_AVAILABLE_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "1 if dark spectra collected")
+    field(VAL,  "0")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_DARK_AVAILABLE")
+}
+
+record(bi, "$(PREFIX):REF_AVAILABLE_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "1 if ref spectra collected")
+    field(VAL,  "0")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_REF_AVAILABLE")
+}

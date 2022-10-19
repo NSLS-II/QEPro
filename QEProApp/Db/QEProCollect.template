@@ -1,0 +1,176 @@
+record(bo, "$(PREFIX):COLLECT") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Flag for collecting")
+    field(VAL,  "0")
+    field(ZNAM, "Idle")
+    field(ONAM, "Collecting")
+    field(PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_COLLECT")
+}
+
+record(bi, "$(PREFIX):COLLECT_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Flag for collecting")
+    field(VAL,  "0")
+    field(ZNAM, "Idle")
+    field(ONAM, "Collecting")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_COLLECT")
+}
+
+
+record(bo, "$(PREFIX):SUBTRACT_FORMAT") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Specifiy whether to abs negative values")
+    field(VAL,  "0")
+    field(ZNAM, "Raw")
+    field(ONAM, "Absolute Value")
+    field(PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_SUB_FORMAT")
+}
+
+record(bi, "$(PREFIX):SUBTRACT_FORMAT_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Specifiy whether to abs negative values")
+    field(VAL,  "0")
+    field(ZNAM, "Raw")
+    field(ONAM, "Absolute Value")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_SUB_FORMAT")
+}
+
+
+record(mbbo, "$(PREFIX):COLLECT_MODE") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Spectrometer collect mode")
+    field(VAL,  "0")
+    field(ZRST, "Single")
+    field(ZRVL, "0")
+    field(ONST, "Average")
+    field(ONVL, "1")
+    field(TWST, "Continuous")
+    field(TWVL, "2")
+    field (PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_COLLECT_MODE")
+}
+
+record(mbbi, "$(PREFIX):COLLECT_MODE_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Spectrometer COLLECT mode")
+    field(VAL,  "0")
+    field(ZRST, "Single")
+    field(ZRVL, "0")
+    field(ONST, "Average")
+    field(ONVL, "1")
+    field(TWST, "Continuous")
+    field(TWVL, "2")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_COLLECT_MODE")
+}
+
+record(bo, "$(PREFIX):X_AXIS_FORMAT") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling raman")
+    field(VAL,  "0")
+    field(ZNAM, "Wavelengths")
+    field(ONAM, "Raman")
+    field(PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_X_AXIS_FORMAT")
+}
+
+record(bi, "$(PREFIX):X_AXIS_FORMAT_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling raman")
+    field(ZNAM, "Wavelengths")
+    field(ONAM, "Raman")
+    field(PINI, "YES")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_X_AXIS_FORMAT")
+}
+
+
+
+record(mbbo, "$(PREFIX):SPECTRUM_TYPE") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Spectrometer collect mode")
+    field(VAL,  "2")
+    field(ZRST, "Dark")
+    field(ZRVL, "0")
+    field(ONST, "Reference")
+    field(ONVL, "1")
+    field(TWST, "Corrected Sample")
+    field(TWVL, "2")
+    field(THST, "Absorbtion")
+    field(THVL, "3")
+    field (PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_SPECTRUM_TYPE")
+}
+
+record(mbbi, "$(PREFIX):SPECTRUM_TYPE_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Spectrometer collect mode")
+    field(ZRST, "Dark")
+    field(ZRVL, "0")
+    field(ONST, "Reference")
+    field(ONVL, "1")
+    field(TWST, "Corrected Sample")
+    field(TWVL, "2")
+    field(THST, "Absorbtion")
+    field(THVL, "3")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_SPECTRUM_TYPE")
+}
+
+
+record(mbbo, "$(PREFIX):CORRECTION") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Spectrometer correction mode")
+    field(VAL,  "0")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "Dark")
+    field(ONVL, "1")
+    field(TWST, "Reference")
+    field(TWVL, "2")
+    field (PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_CORRECTION")
+}
+
+record(mbbi, "$(PREFIX):CORRECTION_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Spectrometer correction mode")
+    field(VAL,  "0")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "Dark")
+    field(ONVL, "1")
+    field(TWST, "Reference")
+    field(TWVL, "2")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_CORRECTION")
+}
+
+
+record(ao, "$(PREFIX):NUM_SPECTRA") {
+    field(DESC, "Number of Spectra to average")
+    field(DTYP, "asynInt32")
+    field(VAL, "1")
+    field(PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_NUM_SPECTRA")
+}
+
+record(ai, "$(PREFIX):NUM_SPECTRA_RBV") {
+    field(DESC, "Number of Spectra to average")
+    field(DTYP, "asynInt32")
+    field(VAL, "1")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_NUM_SPECTRA")
+}
+
+record(ai, "$(PREFIX):SPECTRA_COLLECTED_RBV") {
+    field(DESC, "Number of Spectra to average")
+    field(DTYP, "asynInt32")
+    field(VAL, "0")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_SPECTRA_COLLECTED")
+}

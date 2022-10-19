@@ -1,0 +1,332 @@
+#
+# Database file for QEPro Spectrometer EPICS driver
+#
+# Author: Jakub Wlodek
+#
+
+
+record(stringin, "$(PREFIX):SERIAL") {
+    field(DTYP, "asynOctetRead")
+    field(DESC, "Serial number of device")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_SERIAL")
+}
+
+record(stringin, "$(PREFIX):MODEL") {
+    field(DTYP, "asynOctetRead")
+    field(DESC, "Spectrometer model")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_MODEL")
+}
+
+record(waveform, "$(PREFIX):STATUS_MSG") {
+    field(DTYP, "asynOctetRead")
+    field(DESC, "Status message")
+    field(SCAN, "I/O Intr")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_STATUS")
+}
+
+record(bi, "$(PREFIX):CONNECTED_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "0 if connected, 1 otherwise")
+    field(VAL,  "0")
+    field(ZNAM, "Disconnected")
+    field(ONAM, "Connected")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_CONNECTED")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(PREFIX):STATUS") {
+    field(DTYP, "asynInt32")
+    field(DESC, "0 status ok, 1 if error")
+    field(VAL,  "0")
+    field(ZNAM, "No Error")
+    field(ONAM, "Error")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_ERR")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(PREFIX):FEATURES_RBV") {
+    field(DESC, "Supported features")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_FEATURES")
+}
+
+record(bo, "$(PREFIX):STROBE") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling strobe")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_STROBE")
+}
+
+record(bi, "$(PREFIX):STROBE_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling strobe")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_STROBE")
+}
+
+record(bo, "$(PREFIX):EDC") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling EDC")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_EDC")
+}
+
+record(bi, "$(PREFIX):EDC_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling EDC")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_EDC")
+}
+
+record(bo, "$(PREFIX):NLC") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling NLC")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_NLC")
+}
+
+record(bi, "$(PREFIX):NLC_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling NLC")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_NLC")
+}
+
+record(ao, "$(PREFIX):LIGHT_SOURCE_INTENSITY") {
+    field(DESC, "Intensity of the specified light sources")
+    field(DTYP, "asynFloat64")
+    field(SCAN, "I/O Intr")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_LIGHT_SOURCE_INTENSITY")
+}
+
+record(ai, "$(PREFIX):LIGHT_SOURCE_INTENSITY_RBV") {
+    field(DESC, "Intensity of the specified light sources")
+    field(DTYP, "asynFloat64")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_LIGHT_SOURCE_INTENSITY")
+}
+
+record(bo, "$(PREFIX):LIGHT_SOURCE") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for light sources")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_LIGHT_SOURCE")
+}
+
+record(bi, "$(PREFIX):LIGHT_SOURCE_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for light sources")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_LIGHT_SOURCE")
+}
+
+record(ai, "$(PREFIX):LIGHT_SOURCE_COUNT_RBV") {
+    field(DESC, "Number of light sources")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(VAL, "0")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_LIGHT_SOURCE_CNT")
+}
+
+
+record(ai, "$(PREFIX):INT_MIN_TIME_RBV") {
+    field(DESC, "Minimum int time")
+    field(DTYP, "asynFloat64")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_MIN_INT_TIME")
+}
+
+record(ai, "$(PREFIX):INT_MAX_TIME_RBV") {
+    field(DESC, "Maximum int time")
+    field(DTYP, "asynFloat64")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_MAX_INT_TIME")
+}
+
+
+
+record(ao, "$(PREFIX):INTEGRATION_TIME") {
+    field(DESC, "Integration time in us")
+    field(DTYP, "asynFloat64")
+    field(PREC, "3")
+    field(VAL, "15.0")
+    field(PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_INTEGRATION_TIME")
+}
+
+record(ai, "$(PREFIX):INTEGRATION_TIME_RBV") {
+    field(DESC, "Integration time in us")
+    field(DTYP, "asynFloat64")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_INTEGRATION_TIME")
+}
+
+
+
+record(ai, "$(PREFIX):BUFF_MIN_CAPACITY_RBV") {
+    field(DESC, "Minimum buffer capacity")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_MIN_BUFF_CAPACITY")
+}
+
+record(ai, "$(PREFIX):BUFF_MAX_CAPACITY_RBV") {
+    field(DESC, "Maximum buffer capacity")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_MAX_BUFF_CAPACITY")
+}
+
+
+record(ao, "$(PREFIX):BUFF_CAPACITY") {
+    field(DESC, "buffer capacity")
+    field(DTYP, "asynInt32")
+    field(VAL, "1")
+    #field(PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_BUFF_CAPACITY")
+}
+
+record(ai, "$(PREFIX):BUFF_CAPACITY_RBV") {
+    field(DESC, "buffer capacity")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_BUFF_CAPACITY")
+}
+
+record(ai, "$(PREFIX):BUFF_ELEMENT_COUNT_RBV") {
+    field(DESC, "Buffer Element count")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_BUFF_ELEMENT_CNT")
+}
+
+record(mbbo, "$(PREFIX):TRIGGER_MODE") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Spectrometer trigger mode")
+    field(VAL,  "0")
+    field(ZRST, "Normal")
+    field(ZRVL, "0")
+    field(ONST, "Software")
+    field(ONVL, "1")
+    field(TWST, "Synchro.")
+    field(TWVL, "2")
+    field(THST, "External")
+    field(THVL, "3")
+    field (PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_TRIGGER_MODE")
+}
+
+record(mbbi, "$(PREFIX):TRIGGER_MODE_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Spectrometer trigger mode")
+    field(VAL,  "0")
+    field(ZRST, "Normal")
+    field(ZRVL, "0")
+    field(ONST, "Software")
+    field(ONVL, "1")
+    field(TWST, "Synchro.")
+    field(TWVL, "2")
+    field(THST, "External")
+    field(THVL, "3")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_TRIGGER_MODE")
+}
+
+
+record(bo, "$(PREFIX):TEC") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling tec")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(PINI, "YES")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_TEC")
+}
+
+record(bi, "$(PREFIX):TEC_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling tec")
+    field(VAL,  "0")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_TEC")
+}
+
+record(ao, "$(PREFIX):TEC_TEMP") {
+    field(DESC, "TEC Temperature")
+    field(DTYP, "asynFloat64")
+    field(PREC, "2")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_TEC_TEMP")
+}
+
+record(ai, "$(PREFIX):TEC_TEMP_RBV") {
+    field(DESC, "Target TEC Temperature")
+    field(DTYP, "asynFloat64")
+    field(PREC, "2")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_TEC_TEMP")
+}
+
+
+record(bo, "$(PREFIX):CHECK_STATUS"){
+    field(DESC, "Periodic status check")
+    field(DTYP, "asynInt32")
+    field(VAL,  "0")
+    field(SCAN, "1 second")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_CHECK_STATUS")
+}
+
+
+record(ai, "$(PREFIX):CURR_TEC_TEMP_RBV") {
+    field(DESC, "Target TEC Temperature")
+    field(DTYP, "asynFloat64")
+    field(PREC, "2")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_CURR_TEC_TEMP")
+}
+
+record(bo, "$(PREFIX):SHUTTER") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling shutter")
+    field(VAL,  "1")
+    field(ZNAM, "Closed")
+    field(ONAM, "Open")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_SHUTTER")
+}
+
+record(bi, "$(PREFIX):SHUTTER_RBV") {
+    field(DTYP, "asynInt32")
+    field(DESC, "Toggle for enabling or disabling shutter")
+    field(VAL,  "1")
+    field(ZNAM, "Closed")
+    field(ONAM, "Open")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))QEPRO_SHUTTER")
+}

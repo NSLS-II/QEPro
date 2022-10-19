@@ -1,0 +1,4 @@
+epicsEnvSet("IOC","iocQEPro")
+epicsEnvSet("TOP","/epics/iocs/QEPro/iocs/QEProIOC")
+epicsEnvSet("QEPRO","/epics/iocs/QEPro/iocs/QEProIOC/../..")
+epicsEnvSet("EPICS_BASE","/usr/lib/epics")

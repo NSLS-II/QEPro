@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>QEPro Spectra</name>
+  <x>2412</x>
+  <y>415</y>
+  <width>850</width>
+  <height>510</height>
+  <background_color>
+    <color name="GLOBAL canvas" red="200" green="200" blue="200">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraph</name>
+    <x>6</x>
+    <y>48</y>
+    <width>843</width>
+    <height>349</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <title>Formatted Spectrum</title>
+    <title_font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Set X-Axis Title" prop_id="axis_0_axis_title" out_exp="true">
+        <exp bool_exp="pv0 != 1">
+          <expression>"Wavelengths (nm)"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <expression>"Raman"</expression>
+        </exp>
+        <pv_name>$(P):X_AXIS_FORMAT_RBV</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>Pixels</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>1.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font family="SansSerif" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="SansSerif" style="BOLD" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Value</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>80.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="SansSerif" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="SansSerif" style="BOLD" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(P):X_AXIS</x_pv>
+        <y_pv>$(P):SPECTRUM</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="yellow-36" red="224" green="224" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <width>827</width>
+    <height>41</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="RING title" red="174" green="196" blue="195">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label</name>
+    <text>$(P) - QEPro</text>
+    <x>16</x>
+    <y>11</y>
+    <width>125</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput</name>
+    <pv_name>$(P):MODEL</pv_name>
+    <x>379</x>
+    <y>11</y>
+    <width>117</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <format>6</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>EDM Byte</name>
+    <pv_name>$(P):CONNECTED_RBV</pv_name>
+    <x>796</x>
+    <y>11</y>
+    <width>21</width>
+    <numBits>1</numBits>
+    <bitReverse>true</bitReverse>
+    <horizontal>false</horizontal>
+    <square>true</square>
+    <off_color>
+      <color name="OFF" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_31</name>
+    <text>Connection</text>
+    <x>700</x>
+    <y>11</y>
+    <width>115</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput</name>
+    <pv_name>$(P):SERIAL</pv_name>
+    <x>507</x>
+    <y>11</y>
+    <width>179</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <format>6</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraph_1</name>
+    <x>6</x>
+    <y>780</y>
+    <width>843</width>
+    <height>349</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <title>Dark Spectrum</title>
+    <title_font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Set X-Axis Title" prop_id="axis_0_axis_title" out_exp="true">
+        <exp bool_exp="pv0 != 1">
+          <expression>"Wavelengths (nm)"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <expression>"Raman"</expression>
+        </exp>
+        <pv_name>$(P):X_AXIS_FORMAT_RBV</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>Pixels</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>1.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font family="SansSerif" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="SansSerif" style="BOLD" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Value</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>80.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="SansSerif" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="SansSerif" style="BOLD" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(P):X_AXIS</x_pv>
+        <y_pv>$(P):DARK</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="yellow-36" red="224" green="224" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraph_2</name>
+    <x>6</x>
+    <y>414</y>
+    <width>843</width>
+    <height>349</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <title>Reference Spectrum</title>
+    <title_font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Set X-Axis Title" prop_id="axis_0_axis_title" out_exp="true">
+        <exp bool_exp="pv0 != 1">
+          <expression>"Wavelengths (nm)"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <expression>"Raman"</expression>
+        </exp>
+        <pv_name>$(P):X_AXIS_FORMAT_RBV</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>Pixels</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>1.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font family="SansSerif" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="SansSerif" style="BOLD" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Value</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>80.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="SansSerif" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="SansSerif" style="BOLD" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(P):X_AXIS</x_pv>
+        <y_pv>$(P):REFERENCE</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="yellow-36" red="224" green="224" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+</display>

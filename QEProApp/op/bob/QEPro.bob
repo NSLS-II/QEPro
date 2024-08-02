@@ -1,0 +1,3311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>QEPro</name>
+  <x>2412</x>
+  <y>500</y>
+  <width>900</width>
+  <height>1000</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle_11</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>684</x>
+    <y>479</y>
+    <width>150</width>
+    <height>134</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_61</name>
+    <text>Utils</text>
+    <x>695</x>
+    <y>474</y>
+    <width>31</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle_11</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>685</x>
+    <y>277</y>
+    <width>150</width>
+    <height>187</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_61</name>
+    <text>Spectra</text>
+    <x>696</x>
+    <y>272</y>
+    <width>53</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>327</x>
+    <y>203</y>
+    <width>500</width>
+    <height>53</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="xyplot" version="2.0.0">
+    <name>EDM xyGraph</name>
+    <x>16</x>
+    <y>642</y>
+    <width>843</width>
+    <height>349</height>
+    <foreground_color>
+      <color name="grey-13" red="45" green="45" blue="45">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <title>Formatted Spectrum</title>
+    <title_font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Set X-Axis Title" prop_id="axis_0_axis_title" out_exp="true">
+        <exp bool_exp="pv0 != 1">
+          <expression>"Wavelengths (nm)"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <expression>"Raman"</expression>
+        </exp>
+        <pv_name>$(P):X_AXIS_FORMAT_RBV</pv_name>
+      </rule>
+    </rules>
+    <x_axis>
+      <title>Pixels</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>1.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font family="SansSerif" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="SansSerif" style="BOLD" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Value</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>80.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="arial" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="arial" style="BOLD" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <x_pv>$(P):X_AXIS</x_pv>
+        <y_pv>$(P):SPECTRUM</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="yellow-36" red="224" green="224" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>11</x>
+    <y>55</y>
+    <width>304</width>
+    <height>190</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Open Asyn Page</name>
+    <actions>
+      <action type="open_display">
+        <file>../epics7/asyn/asynRecord.opi</file>
+        <macros>
+          <R>:ASYNIO</R>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>DEBUG</text>
+    <x>700</x>
+    <y>515</y>
+    <width>117</width>
+    <height>31</height>
+    <font>
+      <font family="SansSerif" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="purple-46" red="192" green="0" blue="192">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>322</x>
+    <y>55</y>
+    <width>195</width>
+    <height>130</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label</name>
+    <text>Supported Features</text>
+    <x>330</x>
+    <y>50</y>
+    <width>136</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>EDM Byte</name>
+    <pv_name>$(P):FEATURES_RBV</pv_name>
+    <x>476</x>
+    <y>71</y>
+    <width>31</width>
+    <height>112</height>
+    <numBits>6</numBits>
+    <bitReverse>true</bitReverse>
+    <horizontal>false</horizontal>
+    <square>true</square>
+    <off_color>
+      <color name="green-19" red="0" green="128" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="Monitor: NORMAL" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label</name>
+    <text>Electric Dark Correction</text>
+    <x>327</x>
+    <y>109</y>
+    <width>189</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label</name>
+    <text>Data Buffer</text>
+    <x>327</x>
+    <y>129</y>
+    <width>92</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label</name>
+    <text>Control</text>
+    <x>14</x>
+    <y>51</y>
+    <width>50</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label</name>
+    <text>Strobe Mode</text>
+    <x>17</x>
+    <y>71</y>
+    <width>101</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button</name>
+    <pv_name>$(P):STROBE</pv_name>
+    <x>123</x>
+    <y>67</y>
+    <width>95</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label</name>
+    <text>Status Message</text>
+    <x>338</x>
+    <y>198</y>
+    <width>108</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput</name>
+    <pv_name>$(P):STATUS_MSG</pv_name>
+    <x>336</x>
+    <y>222</y>
+    <width>481</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <format>6</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="ERROR COLOR" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(P):STATUS</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Open Asyn Page_1</name>
+    <actions>
+      <action type="open_display">
+        <file>../common/ct/ioc_stats_soft.opi</file>
+        <macros>
+          <Dev>{QEPro:Spec-1}</Dev>
+          <Sys>XF:28ID2-ES</Sys>
+          <ioc>$(Sys)$(Dev)</ioc>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>INFO</text>
+    <x>701</x>
+    <y>562</y>
+    <width>115</width>
+    <height>31</height>
+    <font>
+      <font family="SansSerif" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="192" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_9</name>
+    <pv_name>$(P):STROBE_RBV</pv_name>
+    <x>228</x>
+    <y>68</y>
+    <width>70</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_19</name>
+    <text>TEC</text>
+    <x>328</x>
+    <y>91</y>
+    <width>30</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_20</name>
+    <text>TEC (C)</text>
+    <x>17</x>
+    <y>99</y>
+    <width>58</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_1</name>
+    <pv_name>$(P):TEC</pv_name>
+    <x>123</x>
+    <y>95</y>
+    <width>95</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_10</name>
+    <pv_name>$(P):TEC_RBV</pv_name>
+    <x>228</x>
+    <y>96</y>
+    <width>70</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_21</name>
+    <text>TEC Target (C)</text>
+    <x>17</x>
+    <y>128</y>
+    <width>115</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM Text Entry_1</name>
+    <pv_name>$(P):TEC_TEMP</pv_name>
+    <x>123</x>
+    <y>123</y>
+    <width>96</width>
+    <height>24</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_11</name>
+    <pv_name>$(P):TEC_TEMP_RBV</pv_name>
+    <x>228</x>
+    <y>125</y>
+    <width>70</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_22</name>
+    <text>Trigger Mode</text>
+    <x>17</x>
+    <y>187</y>
+    <width>106</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_2</name>
+    <pv_name>$(P):TRIGGER_MODE</pv_name>
+    <x>123</x>
+    <y>183</y>
+    <width>95</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_12</name>
+    <pv_name>$(P):TRIGGER_MODE_RBV</pv_name>
+    <x>228</x>
+    <y>184</y>
+    <width>70</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_23</name>
+    <text>IRRAD Collection Area</text>
+    <x>327</x>
+    <y>166</y>
+    <width>175</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_24</name>
+    <text>Shutter</text>
+    <x>17</x>
+    <y>218</y>
+    <width>60</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_3</name>
+    <pv_name>$(P):SHUTTER</pv_name>
+    <x>123</x>
+    <y>214</y>
+    <width>95</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_13</name>
+    <pv_name>$(P):SHUTTER_RBV</pv_name>
+    <x>228</x>
+    <y>215</y>
+    <width>70</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle_5</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>336</x>
+    <y>280</y>
+    <width>334</width>
+    <height>325</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_25</name>
+    <text>Collection</text>
+    <x>348</x>
+    <y>271</y>
+    <width>68</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Open Asyn Page_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P):COLLECT</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <text>START</text>
+    <x>364</x>
+    <y>535</y>
+    <width>95</width>
+    <font>
+      <font family="SansSerif" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="S_ind" red="0" green="177" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle_6</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>525</x>
+    <y>55</y>
+    <width>302</width>
+    <height>120</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_26</name>
+    <text>Light Source</text>
+    <x>536</x>
+    <y>50</y>
+    <width>86</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_14</name>
+    <pv_name>$(P):LIGHT_SOURCE_COUNT_RBV</pv_name>
+    <x>740</x>
+    <y>75</y>
+    <width>78</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <format>1</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_27</name>
+    <text>Light Source Count</text>
+    <x>535</x>
+    <y>78</y>
+    <width>152</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_28</name>
+    <text>Light Source</text>
+    <x>535</x>
+    <y>111</y>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_4</name>
+    <pv_name>$(P):LIGHT_SOURCE</pv_name>
+    <x>635</x>
+    <y>107</y>
+    <width>95</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_15</name>
+    <pv_name>$(P):LIGHT_SOURCE_RBV</pv_name>
+    <x>740</x>
+    <y>108</y>
+    <width>78</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Open Asyn Page_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P):COLLECT</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <text>STOP</text>
+    <x>364</x>
+    <y>568</y>
+    <width>95</width>
+    <height>29</height>
+    <font>
+      <font family="SansSerif" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_30</name>
+    <text>LS Intensity</text>
+    <x>536</x>
+    <y>145</y>
+    <width>95</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM Text Entry_2</name>
+    <pv_name>$(P):LIGHT_SOURCE_INTENSITY</pv_name>
+    <x>636</x>
+    <y>140</y>
+    <width>91</width>
+    <height>24</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <precision>4</precision>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_16</name>
+    <pv_name>$(P):LIGHT_SOURCE_INTENSITY_RBV</pv_name>
+    <x>740</x>
+    <y>142</y>
+    <width>78</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>4</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle_5</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>12</x>
+    <y>488</y>
+    <width>302</width>
+    <height>149</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_18</name>
+    <text>Buffer</text>
+    <x>20</x>
+    <y>484</y>
+    <width>43</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_19</name>
+    <text>Capacity</text>
+    <x>17</x>
+    <y>577</y>
+    <width>69</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM Text Entry_1</name>
+    <pv_name>$(P):BUFF_CAPACITY</pv_name>
+    <x>123</x>
+    <y>572</y>
+    <width>95</width>
+    <height>24</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_9</name>
+    <pv_name>$(P):BUFF_CAPACITY_RBV</pv_name>
+    <x>227</x>
+    <y>571</y>
+    <width>78</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_10</name>
+    <pv_name>$(P):BUFF_MAX_CAPACITY_RBV</pv_name>
+    <x>227</x>
+    <y>536</y>
+    <width>78</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_20</name>
+    <text>Maximum Capacity</text>
+    <x>18</x>
+    <y>539</y>
+    <width>150</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_11</name>
+    <pv_name>$(P):BUFF_MIN_CAPACITY_RBV</pv_name>
+    <x>227</x>
+    <y>505</y>
+    <width>78</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_21</name>
+    <text>Minimum Capacity</text>
+    <x>18</x>
+    <y>508</y>
+    <width>146</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_12</name>
+    <pv_name>$(P):BUFF_ELEMENT_COUNT_RBV</pv_name>
+    <x>227</x>
+    <y>607</y>
+    <width>78</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_22</name>
+    <text>Element Count</text>
+    <x>18</x>
+    <y>610</y>
+    <width>116</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_37</name>
+    <text>Light Sources</text>
+    <x>329</x>
+    <y>146</y>
+    <width>108</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle_8</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>11</x>
+    <y>260</y>
+    <width>302</width>
+    <height>113</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_38</name>
+    <text>Integration</text>
+    <x>19</x>
+    <y>256</y>
+    <width>77</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_22</name>
+    <pv_name>$(P):INT_MAX_TIME_RBV</pv_name>
+    <x>212</x>
+    <y>308</y>
+    <width>92</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_40</name>
+    <text>Maximum Integration Time (ms)</text>
+    <x>17</x>
+    <y>311</y>
+    <width>254</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_23</name>
+    <pv_name>$(P):INT_MIN_TIME_RBV</pv_name>
+    <x>212</x>
+    <y>277</y>
+    <width>92</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_41</name>
+    <text>Minimum Integration Time (ms)</text>
+    <x>17</x>
+    <y>280</y>
+    <width>251</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_42</name>
+    <text>Int. Time (ms)</text>
+    <x>17</x>
+    <y>342</y>
+    <width>112</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM Text Entry</name>
+    <pv_name>$(P):INTEGRATION_TIME</pv_name>
+    <x>121</x>
+    <y>337</y>
+    <width>95</width>
+    <height>24</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_24</name>
+    <pv_name>$(P):INTEGRATION_TIME_RBV</pv_name>
+    <x>226</x>
+    <y>339</y>
+    <width>78</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>3</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_43</name>
+    <text>Current TEC Temperature (C)</text>
+    <x>17</x>
+    <y>156</y>
+    <width>230</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_25</name>
+    <pv_name>$(P):CURR_TEC_TEMP_RBV</pv_name>
+    <x>228</x>
+    <y>153</y>
+    <width>70</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_44</name>
+    <text>Collection Mode</text>
+    <x>349</x>
+    <y>297</y>
+    <width>127</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_5</name>
+    <pv_name>$(P):COLLECT_MODE</pv_name>
+    <x>454</x>
+    <y>293</y>
+    <width>108</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_26</name>
+    <pv_name>$(P):COLLECT_MODE_RBV</pv_name>
+    <x>569</x>
+    <y>294</y>
+    <width>91</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_45</name>
+    <text>X Axis Format</text>
+    <x>349</x>
+    <y>329</y>
+    <width>111</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_6</name>
+    <pv_name>$(P):X_AXIS_FORMAT</pv_name>
+    <x>454</x>
+    <y>325</y>
+    <width>108</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_27</name>
+    <pv_name>$(P):X_AXIS_FORMAT_RBV</pv_name>
+    <x>569</x>
+    <y>326</y>
+    <width>91</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_46</name>
+    <text>Collecting Status</text>
+    <x>505</x>
+    <y>543</y>
+    <width>135</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_29</name>
+    <pv_name>$(P):COLLECT_RBV</pv_name>
+    <x>505</x>
+    <y>568</y>
+    <width>151</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Color Changer" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0 == 0">
+          <value>
+            <color name="Red" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(P):COLLECT_RBV</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>EDM Byte_2</name>
+    <pv_name>$(P):COLLECT_RBV</pv_name>
+    <x>625</x>
+    <y>539</y>
+    <width>31</width>
+    <height>22</height>
+    <numBits>1</numBits>
+    <square>true</square>
+    <off_color>
+      <color name="red-24" red="128" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_48</name>
+    <text>Correction Type</text>
+    <x>349</x>
+    <y>433</y>
+    <width>126</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_7</name>
+    <pv_name>$(P):CORRECTION</pv_name>
+    <x>454</x>
+    <y>429</y>
+    <width>108</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_30</name>
+    <pv_name>$(P):CORRECTION_RBV</pv_name>
+    <x>569</x>
+    <y>430</y>
+    <width>91</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_49</name>
+    <text>Spectrum</text>
+    <x>349</x>
+    <y>466</y>
+    <width>77</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_8</name>
+    <pv_name>$(P):SPECTRUM_TYPE</pv_name>
+    <x>454</x>
+    <y>462</y>
+    <width>108</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_31</name>
+    <pv_name>$(P):SPECTRUM_TYPE_RBV</pv_name>
+    <x>569</x>
+    <y>463</y>
+    <width>91</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_50</name>
+    <text>Dark Spectrum</text>
+    <x>349</x>
+    <y>502</y>
+    <width>119</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>EDM Byte_3</name>
+    <pv_name>$(P):DARK_AVAILABLE_RBV</pv_name>
+    <x>446</x>
+    <y>498</y>
+    <width>31</width>
+    <height>22</height>
+    <numBits>1</numBits>
+    <square>true</square>
+    <off_color>
+      <color name="red-24" red="128" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_51</name>
+    <text>Reference Spectrum</text>
+    <x>489</x>
+    <y>502</y>
+    <width>161</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>EDM Byte_4</name>
+    <pv_name>$(P):REF_AVAILABLE_RBV</pv_name>
+    <x>625</x>
+    <y>498</y>
+    <width>31</width>
+    <height>22</height>
+    <numBits>1</numBits>
+    <square>true</square>
+    <off_color>
+      <color name="red-24" red="128" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <width>827</width>
+    <height>41</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="RING title" red="174" green="196" blue="195">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label</name>
+    <text>$(P) - QEPro</text>
+    <x>16</x>
+    <y>11</y>
+    <width>125</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput</name>
+    <pv_name>$(P):MODEL</pv_name>
+    <x>379</x>
+    <y>11</y>
+    <width>117</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <format>6</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>EDM Byte</name>
+    <pv_name>$(P):CONNECTED_RBV</pv_name>
+    <x>796</x>
+    <y>11</y>
+    <width>21</width>
+    <numBits>1</numBits>
+    <bitReverse>true</bitReverse>
+    <horizontal>false</horizontal>
+    <square>true</square>
+    <off_color>
+      <color name="OFF" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_31</name>
+    <text>Connection</text>
+    <x>700</x>
+    <y>11</y>
+    <width>115</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_54</name>
+    <text>Electric Dark</text>
+    <x>349</x>
+    <y>364</y>
+    <width>102</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_9</name>
+    <pv_name>$(P):EDC</pv_name>
+    <x>454</x>
+    <y>360</y>
+    <width>108</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_33</name>
+    <pv_name>$(P):EDC_RBV</pv_name>
+    <x>569</x>
+    <y>360</y>
+    <width>91</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_55</name>
+    <text>Non Linearity</text>
+    <x>352</x>
+    <y>401</y>
+    <width>107</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>EDM menu button_10</name>
+    <pv_name>$(P):NLC</pv_name>
+    <x>454</x>
+    <y>397</y>
+    <width>108</width>
+    <height>21</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_34</name>
+    <pv_name>$(P):NLC_RBV</pv_name>
+    <x>569</x>
+    <y>397</y>
+    <width>91</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_56</name>
+    <text>Non-Linearity Correction</text>
+    <x>329</x>
+    <y>71</y>
+    <width>195</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>EDM Rectangle_10</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>11</x>
+    <y>387</y>
+    <width>302</width>
+    <height>85</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_57</name>
+    <text>Averaging</text>
+    <x>19</x>
+    <y>383</y>
+    <width>70</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_35</name>
+    <pv_name>$(P):SPECTRA_COLLECTED_RBV</pv_name>
+    <x>215</x>
+    <y>443</y>
+    <width>92</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_58</name>
+    <text>Spectra Collected</text>
+    <x>20</x>
+    <y>446</y>
+    <width>140</width>
+    <height>17</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_60</name>
+    <text>Num Spectra to 
+Average</text>
+    <x>17</x>
+    <y>410</y>
+    <width>129</width>
+    <height>36</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM Text Entry_5</name>
+    <pv_name>$(P):NUM_SPECTRA</pv_name>
+    <x>121</x>
+    <y>405</y>
+    <width>95</width>
+    <height>24</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput_37</name>
+    <pv_name>$(P):NUM_SPECTRA_RBV</pv_name>
+    <x>226</x>
+    <y>407</y>
+    <width>78</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextInput</name>
+    <pv_name>$(P):SERIAL</pv_name>
+    <x>507</x>
+    <y>11</y>
+    <width>179</width>
+    <font>
+      <font family="SansSerif" style="BOLD" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="green-16" red="0" green="224" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <format>6</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Open Asyn Page_4</name>
+    <actions execute_as_one="true">
+      <action type="write_pv">
+        <pv_name>$(P):SPECTRUM_TYPE</pv_name>
+        <value>2</value>
+      </action>
+      <action type="write_pv">
+        <pv_name>$(P):COLLECT</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <text>REFERENCE</text>
+    <x>701</x>
+    <y>355</y>
+    <width>117</width>
+    <height>31</height>
+    <font>
+      <font family="SansSerif" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="S_ind" red="0" green="177" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Open Asyn Page_5</name>
+    <actions execute_as_one="true">
+      <action type="write_pv">
+        <pv_name>$(P):SPECTRUM_TYPE</pv_name>
+        <value>1</value>
+      </action>
+      <action type="write_pv">
+        <pv_name>$(P):COLLECT</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <text>DARK</text>
+    <x>701</x>
+    <y>320</y>
+    <width>117</width>
+    <height>31</height>
+    <font>
+      <font family="SansSerif" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="S_ind" red="0" green="177" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Open Asyn Page_6</name>
+    <actions>
+      <action type="open_display">
+        <file>QEProAllSpectra.opi</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>SPECTRA</text>
+    <x>701</x>
+    <y>424</y>
+    <width>117</width>
+    <height>31</height>
+    <font>
+      <font family="SansSerif" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="purple-46" red="192" green="0" blue="192">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_105</name>
+    <text>Correction Helpers</text>
+    <x>696</x>
+    <y>294</y>
+    <width>128</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label_106</name>
+    <text>All Spectra</text>
+    <x>726</x>
+    <y>397</y>
+    <width>74</width>
+    <height>15</height>
+    <font>
+      <font family="SansSerif" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+</display>
